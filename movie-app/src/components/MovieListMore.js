@@ -18,6 +18,7 @@ export default class MovieListMore extends Component {
   }
 
   render() {
+    this.el.classList.add("hide");
     this.el.classList.add("btn", "view-more", "hide");
     this.el.textContent = "View more..";
     this.el.addEventListener("click", async () => {

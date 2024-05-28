@@ -3,10 +3,19 @@ import movieStore, { getMovieDetails } from "../store/moveis";
 
 export default class Movie extends Component {
   async render() {
+    this.el.classList.add("container", "the-movie");
+    // 처음에 스켈레톤 보여지고 정보 받아오면 아래 코드 보여주기
+    this.el.innerHTML = /*html*/ `
+      <div class="poster skeleton"></div>
+      <div class="specs">
+        <div class="title skeleton"></div>
+        <div class="labels skeleton"></div>
+        <div class="plot skeleton"></div>
+      </div>
+    `;
     await getMovieDetails(history.state.id);
     const { movie } = movieStore.state;
     const bigPoster = movie.Poster.replace("SX300", "SX700");
-    this.el.classList.add("container", "the-movie");
     this.el.innerHTML = /*html*/ `
       <div style="background-image:url(${bigPoster})" class="poster"></div>
       <div class="specs">

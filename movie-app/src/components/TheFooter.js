@@ -1,4 +1,5 @@
 import { Component } from "../core/heropy";
+import aboutStore from "../store/about";
 
 export default class TheFooter extends Component {
   constructor() {
@@ -7,14 +8,15 @@ export default class TheFooter extends Component {
     });
   }
   render() {
+    const { github, blog } = aboutStore.state;
     this.el.innerHTML = /*html*/ `
       <div>
-        <a href="https://github.com/minji2219">
+        <a href=${github}>
           GitHub Repository
         </a>
       </div>
       <div>
-        <a href="https://velog.io/@minji2219/posts">
+        <a href=${blog}>
           ${new Date().getFullYear()}
           SEOMINJI
         </a>

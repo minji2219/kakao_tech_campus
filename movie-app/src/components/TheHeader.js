@@ -48,7 +48,7 @@ export default class TheHeader extends Component {
         </ul>
       </nav>
       <a href="#/about" class="user">
-        <img src="../../민지 일러.jpg" alt="user"/>
+        <img src="https://darak-log.vercel.app/profile.jpg" alt="user"/>
       </a>
     `;
   }
